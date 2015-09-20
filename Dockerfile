@@ -17,3 +17,4 @@ FROM node:0.10-onbuild
 MAINTAINER Rion Dooley <dooley@tacc.utexas.edu>
 
 EXPOSE 3000
+CMD ["node", "index.js"]
