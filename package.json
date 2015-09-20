@@ -1,0 +1,27 @@
+{
+  "name": "agaveapi-json-mirror",
+  "version": "0.1.0",
+  "description": "A no-frills REST API for querying and pretty-printing json data",
+  "main": "index.js",
+  "scripts": {
+    "test": "test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/taccaci/agave-json-mirror"
+  },
+  "keywords": [
+    "json",
+    "mirror",
+    "rest",
+    "api"
+  ],
+  "author": "Rion Dooley <dooley@tacc.utexas.edu>",
+  "license": "BSD 2-Clause",
+  "dependencies": {
+    "express": "~4.13.3",
+    "body-parser": "~1.14.0",
+    "request": "~2.62.0",
+    "isobject": "~2.0.0"
+  }
+}
