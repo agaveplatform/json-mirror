@@ -11,13 +11,19 @@ app.use(bodyParser.urlencoded({
 // parse application/json
 app.use(bodyParser.json())
 
+function isArray(obj) {
+  return (!isObject(obj) && (typeof obj === 'object'));
+}
+
 app.use(function(req, res) {
   if (!req.body) return res.status(400).status('No JSON body found in the POST request');
 
-  // here is the input
-  // console.log(req.body);
 
-  var mirror = req.body
+
+  // here is the input
+  // console.debug(req.body);
+
+  var result = req.body
 
   // add proper return type header
   res.setHeader('Content-Type', 'text/plain')
@@ -33,54 +39,113 @@ app.use(function(req, res) {
       })
 
       // if they are referencing the previous array, validate and return
-      if (i === '[]') {
+      if (i === '[]')
+      {
+        // objects do not have array access
         if (isObject(obj)) {
           return res.status(400).send('Invalid query path, ' + req.query.q + ' for the POST object');
-        } else if (typeof obj === 'object') {
+        }
+        // arrays return themselves
+        else if (isArray(obj)) {
           lastPathTerm = i;
           return obj;
-        } else {
+        }
+        // primary type cannot have bracket access
+        else {
           return res.status(400).send('Invalid query path, ' + req.query.q + ' for the POST object');
         }
+      }
       // if they are referencing a partial array, recursively complete query and return
-      } else if (matches.length) {
+      else if (matches.length)
+      {
+        // if they are referencing via standard array access, throw exception
         if (i.indexOf("[") !== 0) {
           return res.status(400).send('Invalid query path, ' + req.query.q + ' for the POST object');
-        } else {
+        }
+        // otherwise return the value within brachets
+        else {
           lastPathTerm = i;
           return obj[matches[0]];
         }
       }
+      // no brackets in this term, so we look backwards to determine
+      // whether we need to apply the term to all elements of the previous
+      // array
       else {
-        if (lastPathTerm == '[]') {
+        // was the last term an array?
+        if (lastPathTerm === '[]')
+        {
+          // if the result was an object...shouldn't happen, but if it does
+          // look up by object key
           if (isObject(obj)) {
-            lastPathTerm = i;
+            //lastPathTerm = i;
             return obj[i];
-          } else if (typeof obj === 'object') {
-            console.log("Searching for " + i + " in " + JSON.stringify(obj));
+          }
+          // if it is an array
+          else if (isArray(obj)) {
+            //console.log("Searching for " + i + " in " + JSON.stringify(obj));
             var subquery = [];
-            obj.forEach(function (child, n) {
+            //lastPathTerm = i;
+            obj.forEach(function (child) {
               console.log(child);
               subquery.push(index(child, i));
             });
-            lastPathTerm = i;
+
             return subquery;
-          } else {
-            lastPathTerm = i;
+          }
+          // otherwise get the actual index value
+          else {
+            //lastPathTerm = i;
             return obj[i];
           }
-        } else {
+        }
+        // last term was not an array, so apply standard lookup
+        else {
           lastPathTerm = i;
+          console.log(obj);
+          console.log(i);
           return obj[i];
         }
       }
     }
 
-    mirror = req.query.q.split('.').reduce(index, mirror);
+    result = req.query.q.split('.').reduce(index, result);
+  }
+
+  function stripResponse(obj) {
+    if (isArray(obj)) {
+      var isStructured = false;
+      obj.forEach(function (item) {
+        if (isObject(item)) {
+          isStructured = true;
+          return false;
+        }
+      });
+
+      if (isStructured) {
+        return JSON.stringify(result, null, 2);
+      }
+      else {
+        return obj.join("\n");
+      }
+
+    }
+    else if (isObject(obj)) {
+      return obj.replace(/\\"/g,"\uFFFF").replace(/\"([^"]+)\":/g,"$1:").replace(/\uFFFF/g,"\\\"");
+    }
+    else {
+      return obj;
+    }
   }
 
   // prettyprint and echo the result back
-  res.send(JSON.stringify(mirror, null, 2));
+  if (req.query.strip) {
+    res.send(stripResponse(result));
+  }
+  else {
+    res.send(JSON.stringify(result, null, 2));
+  }
+
 });
 
 var server = app.listen(3000, function() {
