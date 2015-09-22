@@ -1,7 +1,7 @@
 var express = require('express'),
   bodyParser = require('body-parser'),
   isObject = require('isobject'),
-app = express();
+  app = express();
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({
@@ -15,10 +15,16 @@ function isArray(obj) {
   return (!isObject(obj) && (typeof obj === 'object'));
 }
 
+function isInt(value) {
+  if (isNaN(value)) {
+    return false;
+  }
+  var x = parseFloat(value);
+  return (x | 0) === x;
+}
+
 app.use(function(req, res) {
   if (!req.body) return res.status(400).status('No JSON body found in the POST request');
-
-
 
   // here is the input
   // console.debug(req.body);
@@ -27,6 +33,18 @@ app.use(function(req, res) {
 
   // add proper return type header
   res.setHeader('Content-Type', 'text/plain')
+
+  var spacing = 2;
+  if (req.query.spaces) {
+    if (isInt(req.query.spaces)) {
+      spacing = parseInt(req.query.spaces);
+      if (spacing < 0) {
+        return res.status(400).status('Invalid spacing value provided. If specified, spacing should be a positive integer value.');
+      }
+    } else {
+      return res.status(400).status('Invalid spacing value provided. If specified, spacing should be a positive integer value.');
+    }
+  }
 
   // if there is a query provided, apply it to the body
   if (req.query.q) {
@@ -39,8 +57,7 @@ app.use(function(req, res) {
       })
 
       // if they are referencing the previous array, validate and return
-      if (i === '[]')
-      {
+      if (i === '[]') {
         // objects do not have array access
         if (isObject(obj)) {
           return res.status(400).send('Invalid query path, ' + req.query.q + ' for the POST object');
@@ -56,8 +73,7 @@ app.use(function(req, res) {
         }
       }
       // if they are referencing a partial array, recursively complete query and return
-      else if (matches.length)
-      {
+      else if (matches.length) {
         // if they are referencing via standard array access, throw exception
         if (i.indexOf("[") !== 0) {
           return res.status(400).send('Invalid query path, ' + req.query.q + ' for the POST object');
@@ -73,8 +89,7 @@ app.use(function(req, res) {
       // array
       else {
         // was the last term an array?
-        if (lastPathTerm === '[]')
-        {
+        if (lastPathTerm === '[]') {
           // if the result was an object...shouldn't happen, but if it does
           // look up by object key
           if (isObject(obj)) {
@@ -86,7 +101,7 @@ app.use(function(req, res) {
             //console.log("Searching for " + i + " in " + JSON.stringify(obj));
             var subquery = [];
             //lastPathTerm = i;
-            obj.forEach(function (child) {
+            obj.forEach(function(child) {
               console.log(child);
               subquery.push(index(child, i));
             });
@@ -115,7 +130,7 @@ app.use(function(req, res) {
   function stripResponse(obj) {
     if (isArray(obj)) {
       var isStructured = false;
-      obj.forEach(function (item) {
+      obj.forEach(function(item) {
         if (isObject(item)) {
           isStructured = true;
           return false;
@@ -123,17 +138,14 @@ app.use(function(req, res) {
       });
 
       if (isStructured) {
-        return JSON.stringify(result, null, 2);
-      }
-      else {
+        return JSON.stringify(result, null, spacing);
+      } else {
         return obj.join("\n");
       }
 
-    }
-    else if (isObject(obj)) {
-      return obj.replace(/\\"/g,"\uFFFF").replace(/\"([^"]+)\":/g,"$1:").replace(/\uFFFF/g,"\\\"");
-    }
-    else {
+    } else if (isObject(obj)) {
+      return obj.replace(/\\"/g, "\uFFFF").replace(/\"([^"]+)\":/g, "$1:").replace(/\uFFFF/g, "\\\"");
+    } else {
       return obj;
     }
   }
@@ -141,9 +153,8 @@ app.use(function(req, res) {
   // prettyprint and echo the result back
   if (req.query.strip) {
     res.send(stripResponse(result));
-  }
-  else {
-    res.send(JSON.stringify(result, null, 2));
+  } else {
+    res.send(JSON.stringify(result, null, spacing));
   }
 
 });

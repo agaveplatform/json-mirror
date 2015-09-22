@@ -1,0 +1,317 @@
+module.export.testarray = [
+  {
+    "_id": "5601875ba64dc688f1c2d6d8",
+    "index": 0,
+    "guid": "e60acee0-febc-4836-af1f-7fcae99f424c",
+    "isActive": false,
+    "balance": "$3,519.35",
+    "picture": "http://placehold.it/32x32",
+    "age": 27,
+    "eyeColor": "blue",
+    "name": "Morales Griffin",
+    "gender": "male",
+    "company": "ZIDANT",
+    "email": "moralesgriffin@zidant.com",
+    "phone": "+1 (819) 495-2722",
+    "address": "932 Guider Avenue, Fairfield, Colorado, 3085",
+    "about": "Deserunt ex officia magna velit aliquip minim incididunt quis. Dolor amet sunt occaecat irure non. Nisi officia laborum veniam occaecat magna cillum fugiat ullamco. Deserunt occaecat veniam fugiat sunt occaecat enim minim pariatur voluptate occaecat quis in anim.\r\n",
+    "registered": "2014-09-25T06:45:12 +05:00",
+    "latitude": 68.825867,
+    "longitude": 170.247739,
+    "tags": [
+      "magna",
+      "eu",
+      "magna",
+      "commodo",
+      "occaecat",
+      "cillum",
+      "pariatur"
+    ],
+    "friends": [
+      {
+        "id": 0,
+        "name": "Diane Sanchez"
+      },
+      {
+        "id": 1,
+        "name": "Golden Wilcox"
+      },
+      {
+        "id": 2,
+        "name": "Brandie Sharp"
+      }
+    ],
+    "greeting": "Hello, Morales Griffin! You have 8 unread messages.",
+    "favoriteFruit": "strawberry"
+  },
+  {
+    "_id": "5601875b6f7d8f1dd2c67cb1",
+    "index": 1,
+    "guid": "40644271-4a19-4259-8cdf-0cc690718ba2",
+    "isActive": false,
+    "balance": "$3,803.23",
+    "picture": "http://placehold.it/32x32",
+    "age": 26,
+    "eyeColor": "brown",
+    "name": "Blanche Francis",
+    "gender": "female",
+    "company": "AQUAZURE",
+    "email": "blanchefrancis@aquazure.com",
+    "phone": "+1 (980) 423-3843",
+    "address": "714 Lefferts Place, Nash, Louisiana, 6226",
+    "about": "Consectetur deserunt nisi sit tempor. Ullamco proident ad esse velit ullamco et esse tempor cillum est ex enim officia sint. Enim consectetur Lorem do adipisicing qui deserunt commodo excepteur. Adipisicing consequat pariatur ad id tempor dolor. Veniam nulla deserunt quis consectetur irure velit adipisicing officia minim ad eiusmod. Incididunt elit nulla velit est incididunt cupidatat velit nostrud. Ex consequat incididunt aute ut Lorem cupidatat ipsum.\r\n",
+    "registered": "2014-11-03T08:26:50 +06:00",
+    "latitude": -45.293247,
+    "longitude": -109.260415,
+    "tags": [
+      "nulla",
+      "irure",
+      "aliquip",
+      "tempor",
+      "in",
+      "exercitation",
+      "ad"
+    ],
+    "friends": [
+      {
+        "id": 0,
+        "name": "Meagan Erickson"
+      },
+      {
+        "id": 1,
+        "name": "Theresa Pratt"
+      },
+      {
+        "id": 2,
+        "name": "Mcgee Lawson"
+      }
+    ],
+    "greeting": "Hello, Blanche Francis! You have 7 unread messages.",
+    "favoriteFruit": "strawberry"
+  },
+  {
+    "_id": "5601875b2c603bc3eeae77df",
+    "index": 2,
+    "guid": "bc93b2b7-b6b1-4e81-9e96-1f154975f1f9",
+    "isActive": true,
+    "balance": "$1,214.11",
+    "picture": "http://placehold.it/32x32",
+    "age": 38,
+    "eyeColor": "green",
+    "name": "Patsy Newton",
+    "gender": "female",
+    "company": "NIQUENT",
+    "email": "patsynewton@niquent.com",
+    "phone": "+1 (814) 517-2037",
+    "address": "103 Ingraham Street, Wells, Idaho, 1895",
+    "about": "Qui id tempor id excepteur laborum irure est qui eu eiusmod sit ipsum amet. Minim qui officia dolore commodo cillum ad eu commodo velit irure. Exercitation adipisicing deserunt ad elit irure veniam officia nisi aute eu amet aliquip consequat nostrud.\r\n",
+    "registered": "2015-07-08T02:24:10 +05:00",
+    "latitude": -48.053393,
+    "longitude": 112.676497,
+    "tags": [
+      "dolor",
+      "commodo",
+      "consequat",
+      "eu",
+      "anim",
+      "minim",
+      "in"
+    ],
+    "friends": [
+      {
+        "id": 0,
+        "name": "Hawkins Hurley"
+      },
+      {
+        "id": 1,
+        "name": "Beth Blackwell"
+      },
+      {
+        "id": 2,
+        "name": "Martinez Chapman"
+      }
+    ],
+    "greeting": "Hello, Patsy Newton! You have 4 unread messages.",
+    "favoriteFruit": "banana"
+  },
+  {
+    "_id": "5601875b7fe817c361b6c21f",
+    "index": 3,
+    "guid": "c6688e29-9738-44f9-befe-f7586a9f3707",
+    "isActive": true,
+    "balance": "$2,052.52",
+    "picture": "http://placehold.it/32x32",
+    "age": 34,
+    "eyeColor": "blue",
+    "name": "Denise Vincent",
+    "gender": "female",
+    "company": "HANDSHAKE",
+    "email": "denisevincent@handshake.com",
+    "phone": "+1 (858) 487-2861",
+    "address": "926 Freeman Street, Manila, Rhode Island, 7009",
+    "about": "Laboris amet qui cillum minim dolor. Cupidatat sint ad aliquip proident et eiusmod irure. Non Lorem mollit do dolor. Eu eu excepteur mollit eiusmod labore consequat. Sit nulla elit non ipsum pariatur deserunt sint amet laboris consequat enim elit qui anim.\r\n",
+    "registered": "2015-02-16T11:09:33 +06:00",
+    "latitude": 39.143735,
+    "longitude": 128.689882,
+    "tags": [
+      "enim",
+      "nisi",
+      "fugiat",
+      "aliqua",
+      "do",
+      "non",
+      "laborum"
+    ],
+    "friends": [
+      {
+        "id": 0,
+        "name": "Wanda Butler"
+      },
+      {
+        "id": 1,
+        "name": "Selma Marshall"
+      },
+      {
+        "id": 2,
+        "name": "Sophia Fleming"
+      }
+    ],
+    "greeting": "Hello, Denise Vincent! You have 8 unread messages.",
+    "favoriteFruit": "strawberry"
+  },
+  {
+    "_id": "5601875b965ab347a0648378",
+    "index": 4,
+    "guid": "bf0076ca-b8ee-4314-9e72-87beca4f39e9",
+    "isActive": true,
+    "balance": "$1,652.21",
+    "picture": "http://placehold.it/32x32",
+    "age": 37,
+    "eyeColor": "brown",
+    "name": "Reyes Ross",
+    "gender": "male",
+    "company": "QUARMONY",
+    "email": "reyesross@quarmony.com",
+    "phone": "+1 (823) 410-2425",
+    "address": "260 Roosevelt Place, Glendale, Marshall Islands, 4188",
+    "about": "Adipisicing nostrud velit cupidatat do enim laboris labore excepteur velit esse consequat mollit id irure. Do aliqua labore laborum anim laboris officia aute quis amet irure aliquip est magna. Minim ipsum excepteur velit ex. Incididunt ipsum pariatur commodo nostrud deserunt nulla minim aute duis enim duis proident.\r\n",
+    "registered": "2015-01-21T05:58:56 +06:00",
+    "latitude": -13.002613,
+    "longitude": -1.980958,
+    "tags": [
+      "proident",
+      "officia",
+      "ad",
+      "eiusmod",
+      "aliquip",
+      "deserunt",
+      "do"
+    ],
+    "friends": [
+      {
+        "id": 0,
+        "name": "Moss Hughes"
+      },
+      {
+        "id": 1,
+        "name": "Sandoval Foreman"
+      },
+      {
+        "id": 2,
+        "name": "Carlene Yates"
+      }
+    ],
+    "greeting": "Hello, Reyes Ross! You have 7 unread messages.",
+    "favoriteFruit": "strawberry"
+  },
+  {
+    "_id": "5601875b4ec183febce7b077",
+    "index": 5,
+    "guid": "204a5a44-67c4-4d0f-ae8d-ae8c0cbfac85",
+    "isActive": false,
+    "balance": "$2,867.79",
+    "picture": "http://placehold.it/32x32",
+    "age": 26,
+    "eyeColor": "brown",
+    "name": "Mildred Coffey",
+    "gender": "female",
+    "company": "EXOTECHNO",
+    "email": "mildredcoffey@exotechno.com",
+    "phone": "+1 (859) 555-2721",
+    "address": "911 Ocean Parkway, Waiohinu, Wyoming, 864",
+    "about": "Sint anim dolor ad minim commodo culpa adipisicing duis. Id enim occaecat commodo dolore mollit ut sunt est adipisicing sit eu id anim. Elit minim tempor deserunt fugiat ea Lorem officia fugiat laboris esse consectetur.\r\n",
+    "registered": "2014-08-05T08:37:31 +05:00",
+    "latitude": 1.680586,
+    "longitude": -111.374719,
+    "tags": [
+      "sunt",
+      "nulla",
+      "sint",
+      "quis",
+      "ullamco",
+      "Lorem",
+      "ex"
+    ],
+    "friends": [
+      {
+        "id": 0,
+        "name": "Myrna Velasquez"
+      },
+      {
+        "id": 1,
+        "name": "Elma Boyer"
+      },
+      {
+        "id": 2,
+        "name": "Holt Rasmussen"
+      }
+    ],
+    "greeting": "Hello, Mildred Coffey! You have 9 unread messages.",
+    "favoriteFruit": "strawberry"
+  },
+  {
+    "_id": "5601875bfdb3ca3555349385",
+    "index": 6,
+    "guid": "a20d8053-fd2b-422b-b1b6-2769db6582b2",
+    "isActive": true,
+    "balance": "$2,699.80",
+    "picture": "http://placehold.it/32x32",
+    "age": 36,
+    "eyeColor": "green",
+    "name": "Lula Kline",
+    "gender": "female",
+    "company": "BEDLAM",
+    "email": "lulakline@bedlam.com",
+    "phone": "+1 (984) 537-3476",
+    "address": "569 Bushwick Avenue, Coloma, Northern Mariana Islands, 7696",
+    "about": "Lorem dolore sit culpa magna mollit cupidatat dolore est cillum excepteur est exercitation veniam esse. Laboris sint ex in reprehenderit dolore dolor aliqua sit elit. Minim eu proident non veniam veniam occaecat. Sint minim non cillum ea qui deserunt officia. Qui laboris qui ex irure aliqua in enim deserunt voluptate. Adipisicing duis ad labore proident esse Lorem. Ut reprehenderit consectetur ullamco occaecat est esse elit commodo incididunt non est anim elit.\r\n",
+    "registered": "2014-04-08T07:54:11 +05:00",
+    "latitude": -81.31786,
+    "longitude": 66.353626,
+    "tags": [
+      "commodo",
+      "officia",
+      "culpa",
+      "proident",
+      "qui",
+      "esse",
+      "officia"
+    ],
+    "friends": [
+      {
+        "id": 0,
+        "name": "Goff Henson"
+      },
+      {
+        "id": 1,
+        "name": "Ronda Hinton"
+      },
+      {
+        "id": 2,
+        "name": "Priscilla Johns"
+      }
+    ],
+    "greeting": "Hello, Lula Kline! You have 10 unread messages.",
+    "favoriteFruit": "strawberry"
+  }
+];
