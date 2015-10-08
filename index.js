@@ -27,7 +27,7 @@ app.use(function(req, res) {
   if (!req.body) return res.status(400).status('No JSON body found in the POST request');
 
   // here is the input
-  // console.debug(req.body);
+  //console.log(req.body);
 
   var result = req.body
 
